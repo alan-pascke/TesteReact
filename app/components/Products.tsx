@@ -45,7 +45,7 @@ export default function Products() {
       </div>
       <div className="mb-4 border-b border-1"></div>
 
-      <div className="flex flex-col gap-2 cell:mx-12 md:mx-0" data-testid="products">
+      <div className="flex flex-col gap-2 cell:mx-12 md:mx-0" >
         {filteredProducts.length === 0 ? (
           <p className="text-center">Nenhum produto encontrado</p>
         ) : (
