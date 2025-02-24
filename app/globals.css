@@ -19,3 +19,15 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.vertical-line {
+  @apply md:border-2 md:border-black md:h-[165px] md:me-5 ;
+}
+
+.card {
+  @apply flex cell:flex-wrap sm:flex-nowrap items-center justify-center self-center cell:px-12 cell:py-5  md:px-7 md:py-3 border rounded-3xl min-w-[370px] max-w-[900px] shadow-[5px_3px_5px_lightgray]
+}
+
+.product-information{
+  @apply font-semibold text-black
+}

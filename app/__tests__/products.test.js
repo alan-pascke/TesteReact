@@ -112,7 +112,6 @@ describe("Products", () => {
     render(<Products />);
 
     const results = await waitFor(() => screen.getAllByTestId("product"));
-
     expect(results.length).toBe(5);
   });
 
