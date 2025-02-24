@@ -11,10 +11,15 @@ export default function Products() {
   const {products} = useFetchProducts();
 
   const filteredProducts = query
-  ? products.filter((product) =>
-      product.name.toLowerCase().includes(query.toLowerCase()) ||
-      product.cars.some((car) => car.toLowerCase().includes(query.toLowerCase()))
-    )
+  ? products.filter((product) => {
+      const queryTerms = query.toLowerCase().split(" ");
+
+      return queryTerms.every((term) =>
+        product.name.toLowerCase().includes(term) ||
+        product.model.toLowerCase().includes(term) ||
+        product.cars.some((car) => car.toLowerCase().includes(term))
+      );
+    })
   : products;
 
   return (
@@ -45,7 +50,7 @@ export default function Products() {
           <p className="text-center">Nenhum produto encontrado</p>
         ) : (
           filteredProducts.map((product, index) => (
-            <div key={index}  data-testid="product" className="card">
+            <div key={index} className="card" data-testid="product">
 
               <div className="flex flex-none flex-col md:w-[175px] items-center justify-center text-center">
                 <Image src={product.image} alt={product.name} width={180} height={180} ></Image>
