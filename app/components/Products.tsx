@@ -23,7 +23,7 @@ export default function Products() {
   : products;
 
   return (
-    <div className="w-full flex justify-center flex-col h-full">
+    <div className="w-full flex justify-center flex-col h-full bg-white">
       <div className="border-gray-500 w-1/2 mx-auto mb-4">
         <label htmlFor="search" className="block text-sm/6 font-medium text-gray-900">
           Pesquisa

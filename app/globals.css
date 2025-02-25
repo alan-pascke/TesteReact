@@ -18,6 +18,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  @apply dark:text-white
 }
 
 .vertical-line {
@@ -25,7 +26,7 @@ body {
 }
 
 .card {
-  @apply flex cell:flex-wrap sm:flex-nowrap items-center justify-center self-center cell:px-12 cell:py-5  md:px-7 md:py-3 border rounded-3xl min-w-[370px] max-w-[900px] shadow-[5px_3px_5px_lightgray]
+  @apply flex cell:flex-wrap sm:flex-nowrap dark:bg-white items-center justify-center self-center cell:px-12 cell:py-5  md:px-7 md:py-3 rounded-3xl min-w-[370px] max-w-[900px] shadow-[5px_3px_5px_lightgray]
 }
 
 .product-information{
