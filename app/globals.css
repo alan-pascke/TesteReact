@@ -18,17 +18,17 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
-  @apply dark:text-white
 }
+
 
 .vertical-line {
   @apply md:border-2 md:border-black md:h-[165px] md:me-5 ;
 }
 
 .card {
-  @apply flex cell:flex-wrap sm:flex-nowrap dark:bg-white items-center justify-center self-center cell:px-12 cell:py-5  md:px-7 md:py-3 rounded-3xl min-w-[370px] max-w-[900px] shadow-[5px_3px_5px_lightgray]
+  @apply flex cell:flex-col md:flex-row dark:bg-[#171717] items-center justify-center self-center cell:px-5 cell:py-5 md:px-7 md:py-3 rounded-3xl min-w-[100px] md:max-w-[900px] sm:max-w-[250px] cell:max-w-[350px] shadow-[5px_3px_5px_lightgray] dark:shadow-[3px_2px_5px_#000000]
 }
 
 .product-information{
-  @apply font-semibold text-black
+  @apply font-semibold text-black dark:text-white
 }

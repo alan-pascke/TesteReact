@@ -23,9 +23,9 @@ export default function Products() {
   : products;
 
   return (
-    <div className="w-full flex justify-center flex-col h-full bg-white">
+    <div className="w-full flex justify-center flex-col h-full">
       <div className="border-gray-500 w-1/2 mx-auto mb-4">
-        <label htmlFor="search" className="block text-sm/6 font-medium text-gray-900">
+        <label htmlFor="search" className="block text-sm/6 font-medium text-gray-900 dark:text-gray-300">
           Pesquisa
         </label>
         <div className="mt-2 grid grid-cols-1">
@@ -45,26 +45,26 @@ export default function Products() {
       </div>
       <div className="mb-4 border-b border-1"></div>
 
-      <div className="flex flex-col gap-2 cell:mx-12 md:mx-0" >
+      <div className="flex cell:flex-wrap cell:justify-center sm:justify-start md:flex-nowrap md:flex-col gap-2 md:mx-0 " >
         {filteredProducts.length === 0 ? (
           <p className="text-center">Nenhum produto encontrado</p>
         ) : (
           filteredProducts.map((product, index) => (
             <div key={index} className="card" data-testid="product">
 
-              <div className="flex flex-none flex-col md:w-[175px] items-center justify-center text-center">
-                <Image src={product.image} alt={product.name} width={180} height={180} ></Image>
-                <h1 className="mt-1 text-lg font-semibold md:text-black cell:text-transparent">{product.model}</h1>
+              <div className="flex flex-none flex-col cell:mb-3 md:mb-0 md:w-[175px] cell:w-full items-center justify-center text-center dark:text-white dark:bg-white rounded-2xl overflow-hidden">
+                <Image src={product.image} alt={product.name} width={180} height={180} title={`${product.model}`}></Image>
+                <p className="mt-1 text-lg font-semibold md:text-black cell:hidden md:block">{product.model}</p>
               </div>
 
-              <div className="vertical-line"></div>
+              <div className="vertical-line dark:opacity-0"></div>
 
               <div className="grow h-[75%]">
                 <h1 className="cell:text-lg md:text-2xl font-semibold ">{product.name}</h1>
                 <div>
                   <div className="mt-4 cell:text-sm md:text-sm grid md:grid-cols-3 cell:grid-cols-2 gap-y-4 row md:grid-row-2 cell:grid-row-3">
                     <div className="text-gray-500">
-                      Durabilidade 
+                      Durabilidade
                       <p className="product-information">{product.treadwear}</p>
                     </div>
                     <div className="text-gray-500">
